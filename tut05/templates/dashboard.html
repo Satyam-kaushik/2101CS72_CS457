@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h2>Welcome, {{ username }}!</h2>
+<p>Your role: <strong>{{ role }}</strong></p>
+
+{% if role == "admin" %}
+    <a href="{{ url_for('admin') }}" class="btn btn-primary">Go to Admin Panel</a>
+{% elif role == "editor" %}
+    <a href="{{ url_for('view_students') }}" class="btn btn-warning">Manage Students</a>
+{% elif role == "viewer" %}
+    <a href="{{ url_for('view_students') }}" class="btn btn-info">View Student Records</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Editor Dashboard{% endblock %}
+
+{% block content %}
+<h2>Editor Dashboard</h2>
+
+<h3>Manage Students</h3>
+<form method="POST" action="{{ url_for('add_student') }}">
+    <input type="text" name="roll" placeholder="Roll No" required>
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="number" name="age" placeholder="Age" required>
+    <input type="text" name="branch" placeholder="Branch" required>
+    <input type="text" name="hometown" placeholder="Hometown" required>
+    <button type="submit" class="btn btn-primary">Add Student</button>
+</form>
+
+{% endblock %}
